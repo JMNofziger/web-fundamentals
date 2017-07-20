@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studio-databases-part-2'>
+    <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -155,8 +155,8 @@
 <p><img src="images/viewings.png" alt="Viewings table" /></p>
 <p>The purpose of this table is to keep track of &quot;who watched what when&quot;. The <em>who</em> is the <code>viewer_id</code>, which is a foreign key that references the <code>viewer_id</code> in the <code>viewers</code> table. The <em>what</em> is the <code>movie_id</code> which is a foreign key that references the <code>movie_id</code> in the <code>movies</code> table. And the <em>when</em> is of course the <code>date_viewed</code> column with a <code>date</code> data type. Each viewing of a movie by one of Sarah's friends is captured as a unique record. </p>
 <p>This kind of table is very common in relational database design. It has many virtues including that it clearly links the <code>movies</code> and <code>viewers</code> table together and it makes the database more maintainable. For instance, you might have chosen to make a <code>viewing</code> table where you actually list the movie title and the name of the viewer. But if you did that then anytime some of that information changes - say a friend gets married and changes last names - you would now have to update the name of the viewer in <em>both</em> the <code>viewers</code> table <em>and</em> the <code>viewings</code> table. With this design, any updates you make to either the <code>movies</code> or <code>viewers</code> table will be reflected automatically in the results from queries on the <code>viewings</code> table.</p>
-<p>Review this lesson from <a href="https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/a/splitting-data-into-related-tables" target="_blank">Khan Academy</a> for a more in-depth explanation of why we break tables up this way.</p>
-<p>If you get stuck on any of the tasks below, you can review lessons in <a href="https://www.khanacademy.org/computing/computer-programming/sql" target="_blank">Khan Academy</a> or <a href="https://www.w3schools.com/sql/default.asp" target="_blank">w3schools</a> to get ideas and remind yourself of the proper syntax.</p>
+<p>Review this lesson from <a href="https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/a/splitting-data-into-related-tables">Khan Academy</a> for a more in-depth explanation of why we break tables up this way.</p>
+<p>If you get stuck on any of the tasks below, you can review lessons in <a href="https://www.khanacademy.org/computing/computer-programming/sql">Khan Academy</a> or <a href="https://www.w3schools.com/sql/default.asp">w3schools</a> to get ideas and remind yourself of the proper syntax.</p>
 <h3 id="your-task">Your Task:</h3>
 <p>Sarah created these tables and inserted all the data into them, but she needs your help to run some queries. You can use the <em>SQL</em> tab in the <code>movie-buff</code> databse to run queries. Just type your SQL statement(s) in the box and press the <em>Go</em> button.</p>
 <p><img src="images/sql.png" alt="SQL tab" /></p>

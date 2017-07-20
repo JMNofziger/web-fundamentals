@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studio-flicklist-6'>
+    <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -128,7 +128,7 @@
                     <p>In this studio we will build persistence into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlicksNet.</p>
 <p>We'll start using a term and associated acronym that is common when connecting applications to databases: <strong>object-relational mapping (ORM)</strong>. Applications store information in the form of <em>objects</em> and databases store data in the form of <em>relational data</em> (tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.</p>
 <h2 id="walkthrough">Walkthrough</h2>
-<p>Our first batch of changes will add code support our chosen ORM implementation, called SQLAlchemy. It'll teach SQLAlchemy about a new class we're making, called 'Movie', and lastly we'll hack our application so it can also be run as a type of library. This first bratch of changes is in the branch <code>walkthrough6a</code>, and you can see the differences from last time in the shell by typing <code>git diff walkthrough6 walkthrough6a</code>, or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6...walkthrough6a" target="_blank">viewing them on github</a>.</p>
+<p>Our first batch of changes will add code support our chosen ORM implementation, called SQLAlchemy. It'll teach SQLAlchemy about a new class we're making, called 'Movie', and lastly we'll hack our application so it can also be run as a type of library. This first bratch of changes is in the branch <code>walkthrough6a</code>, and you can see the differences from last time in the shell by typing <code>git diff walkthrough6 walkthrough6a</code>, or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6...walkthrough6a">viewing them on github</a>.</p>
 <p>The most powerful line in this whole batch of changes is this:</p>
 <pre><code>def getCurrentWatchlist():
     return [movie.name for movie in Movie.query.all()]
@@ -154,7 +154,7 @@
 </ul>
 <p>Today we will change all these to be persistent. We'll walk through the first two together, then you'll handle the last one on your own.</p>
 <h3 id="a-list-of-movie-instances">A List of Movie Instances</h3>
-<p>Our next change is going to be a massive breaking change to our application. Up until now, we've been representing movies as strings of their names. The time has come to represent movies as instances of Movie. This will rip through our application, breaking lots of stuff. We'll rename lots of variables so it's clear when we're talking about Movies, and when we're talking about movie names. Follow along by either doing <code>git diff walkthrough6a walkthrough6b</code> or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6a...walkthrough6b" target="_blank">viewing the diffs on github</a></p>
+<p>Our next change is going to be a massive breaking change to our application. Up until now, we've been representing movies as strings of their names. The time has come to represent movies as instances of Movie. This will rip through our application, breaking lots of stuff. We'll rename lots of variables so it's clear when we're talking about Movies, and when we're talking about movie names. Follow along by either doing <code>git diff walkthrough6a walkthrough6b</code> or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6a...walkthrough6b">viewing the diffs on github</a></p>
 <pre><code class="language-python">def getCurrentWatchlist():
     # old: list of strings
     return [movie.name for movie in Movie.query.all()]
@@ -165,7 +165,7 @@ def getCurrentWatchlist():
 <p>Notice how we have to rework templates to call <code>movie.name</code> when we want a human-readable version of the movie name, and <code>movie.id</code> when we want to reference a specific row in our movie table.</p>
 <p>In this batch of changes, we've changed our most importat data structure - movies - and we've made it possible to add movies to the watch list from the web broweser. Hooray! Cool stuff! The world is our oyster. </p>
 <h3 id="watching-movies">Watching Movies</h3>
-<p>In the next batch of changes, we'll modify the <em>I Watched It!</em> button to change the database, and truly cross off the movie in the database, persistently. You can view them by running the command <code>git diff walkthrough6b walkthrough6-solution</code> or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6b...walkthrough6-solution" target="_blank">viewing the diffs on github</a>. We also finish our transition from strings to Movies by modifying the ratings templates.</p>
+<p>In the next batch of changes, we'll modify the <em>I Watched It!</em> button to change the database, and truly cross off the movie in the database, persistently. You can view them by running the command <code>git diff walkthrough6b walkthrough6-solution</code> or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6b...walkthrough6-solution">viewing the diffs on github</a>. We also finish our transition from strings to Movies by modifying the ratings templates.</p>
 <h2 id="studio">Studio</h2>
 <p>Now that we have some database functionality wired into our application, let's continue to convert our app to use the database. Our next task is to implement persistent ratings, so a user can rate a movie and the information is stored in the database for later.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>

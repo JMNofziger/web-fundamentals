@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-assignment-web-caesar'>
+    <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -136,7 +136,7 @@
 <li><a href="#rendering-the-form-after-encryption">Rendering the form after encryption</a></li>
 <li><a href="#committing-your-work">Committing Your Work</a></li>
 </ul>
-<p>Your final application will function just like our <a href="https://launchcode-demos.appspot.com/caesar" target="_blank">demo app</a>.</p>
+<p>Your final application will function just like our <a href="https://launchcode-demos.appspot.com/caesar">demo app</a>.</p>
 <h2 id="project-and-repository-setup">Project and Repository Setup</h2>
 <p>For this assignment, you will build the entire project from scratch. Future assignments will begin with some starter code, but you'll carry out each step of this assignment yourself.</p>
 <h3 id="git-repository-setup">Git repository setup</h3>
@@ -145,7 +145,7 @@
 $ cd web-caesar
 $ git init
 Initialized empty Git repository in /Users/chris/lc101/web-caesar/.git/</code></pre>
-<p>Now let's connect our local Git repository to a remote repository at GitHub. Visit <a href="https://github.com/" target="_blank">github.com</a> and create a new repository from the menu at top-right.</p>
+<p>Now let's connect our local Git repository to a remote repository at GitHub. Visit <a href="https://github.com/">github.com</a> and create a new repository from the menu at top-right.</p>
 <img src="images/new-repo.png" style="width:400px;" />
 <p>Name the repository <code>web-caesar</code> and add a Python-specific <code>.gitignore</code> file.</p>
 <p><img src="images/repo-settings.png" alt="Repository Settings" /></p>
@@ -242,7 +242,7 @@ Proceed ([y]/n)? y
  * Debugger PIN: 955-679-937</code></pre>
 <p>You should see the form render, but submitting it will result in a &quot;Method Not Allowed&quot; error.</p>
 <h3 id="importing-caesar-code">Importing caesar code</h3>
-<p>Create a file for your Caesar cipher code: <code>touch caesar.py</code>. Now, either copy/paste your solution code from <code>caesar.py</code> from the Crypto assignment in Unit 1, or <a href="https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294" target="_blank">grab ours</a>.</p>
+<p>Create a file for your Caesar cipher code: <code>touch caesar.py</code>. Now, either copy/paste your solution code from <code>caesar.py</code> from the Crypto assignment in Unit 1, or <a href="https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294">grab ours</a>.</p>
 <p>In <code>main.py</code> import the <code>rotate_string</code> function from <code>caesar.py</code>:</p>
 <pre><code class="language-python">from caesar import rotate_string</code></pre>
 <p>We'll use this function in the next step.</p>
@@ -253,8 +253,8 @@ Proceed ([y]/n)? y
 <p>Within <code>encrypt</code>, store the values of these request parameters in local variables, converting data types as necessary. Then, encrypt the value of the <code>text</code> parameter using <code>rotate_string</code>. Return the encrypted string wrapped in <code>&lt;h1&gt;</code> tags, to be rendered in the browser.</p>
 <p>Before embarking on our final task, start up the application and test that everything you've done so far works. This is also a good time to commit your changes to your local Git repo.</p>
 <h3 id="rendering-the-form-after-encryption">Rendering the form after encryption</h3>
-<p>Our final task will be to modify the request handler functions so that the form is displayed again even after submission, with the encrypted string in our <code>&lt;textarea&gt;</code>, as in our <a href="https://launchcode-demos.appspot.com/caesar" target="_blank">demo app</a>.</p>
-<p>Look at your <code>encrypt</code> request handler function. Instead of returning the encrypted string, we want to insert it in the form. To do this, we need to specify within the global <code>form</code> string where the text should be inserted. We'll use Python's <a href="https://docs.python.org/3.6/library/stdtypes.html#str.format" target="_blank"><code>str.format</code> method</a> for this.</p>
+<p>Our final task will be to modify the request handler functions so that the form is displayed again even after submission, with the encrypted string in our <code>&lt;textarea&gt;</code>, as in our <a href="https://launchcode-demos.appspot.com/caesar">demo app</a>.</p>
+<p>Look at your <code>encrypt</code> request handler function. Instead of returning the encrypted string, we want to insert it in the form. To do this, we need to specify within the global <code>form</code> string where the text should be inserted. We'll use Python's <a href="https://docs.python.org/3.6/library/stdtypes.html#str.format"><code>str.format</code> method</a> for this.</p>
 <p>Modify the <code>form</code> variable in two ways:</p>
 <ol>
 <li>Add a placeholder <code>{0}</code> between the opening and closing <code>&lt;textarea&gt;</code> tags.</li>

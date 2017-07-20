@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studio-flicklist-8'>
+    <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -143,7 +143,7 @@
 <p>Note that we are no longer littering your studio code with <code>TODO</code>s. We've still provided a branch with the walkthrough code solution in it, but from now on you will have the discretion of choosing more implementation details yourself.</p>
 <ol>
 <li>
-<p><strong>Fix the Index method</strong>. When the user visits the home page, she still sees <em>everybody's</em> unwatched movies. Fix it so that she only sees her own movies. Instead of a SQL query, you will need to use ORM methods like <code>filter_by</code>. For an example to reference, look at what we did during Walkthrough in <code>MovieRatings.get</code> or visit <a href="https://www.sqlalchemy.org/" target="_blank">the docs for SQLAlchemy</a>, the ORM we are using for this project.</p>
+<p><strong>Fix the Index method</strong>. When the user visits the home page, she still sees <em>everybody's</em> unwatched movies. Fix it so that she only sees her own movies. Instead of a SQL query, you will need to use ORM methods like <code>filter_by</code>. For an example to reference, look at what we did during Walkthrough in <code>MovieRatings.get</code> or visit <a href="https://www.sqlalchemy.org/">the docs for SQLAlchemy</a>, the ORM we are using for this project.</p>
 </li>
 <li><strong>Implement a &quot;recently watched movies&quot; page</strong>. This will be a new page at <code>/recently-watched</code> where users can see a list of &quot;trending&quot; movies. Your goal will be to implement this so that it is the same for everyone, showing the most recently watched movies by <em>any</em> user. Make a new method <code>RecentlyWatchedMovies</code> along with a new route and template. Use your Jinja ninja skills to show the list of movies. Don't forget to add a link so users know how to find the page. Each list item should look something like this:</li>
 </ol>
